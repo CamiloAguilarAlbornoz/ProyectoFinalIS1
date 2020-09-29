@@ -1,4 +1,4 @@
-package edu.uptc.entity;
+package edu.uptc.model.entity;
 
 import java.sql.Date;
 
@@ -19,10 +19,13 @@ public class Vehicle {
 	private String trademark;
 	@Column(name="anio")
 	private Date year;
+	@Column(name="documento")
+	private int document;
 	@OneToOne
 	private Conductor conductor;
 	
-	public Vehicle(String licensePlate, String trademark, Date year) {
+	public Vehicle(int document, String licensePlate, String trademark, Date year) {
+		this.document = document;
 		this.licensePlate = licensePlate;
 		this.trademark = trademark;
 		this.year = year;

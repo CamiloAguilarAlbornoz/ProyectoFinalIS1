@@ -3,11 +3,11 @@
 	<persistence-unit name="FineVehicle">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<jta-data-source>java:/Data Bases</jta-data-source>
-		<class>edu.uptc.entity.Person</class>
-		<class>edu.uptc.entity.Agent</class>
-		<class>edu.uptc.entity.Conductor</class>
-		<class>edu.uptc.entity.Vehicle</class>
-		<class>edu.uptc.entity.PenaltyFee</class>
+		<class>edu.uptc.model.entity.Person</class>
+		<class>edu.uptc.model.entity.Agent</class>
+		<class>edu.uptc.model.entity.Conductor</class>
+		<class>edu.uptc.model.entity.Vehicle</class>
+		<class>edu.uptc.model.entity.PenaltyFee</class>
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://db:3306/vehiculoMulta?useSSL=false"/>
 			<property name="javax.persistence.jdbc.user" value="JCG"/>

@@ -1,4 +1,4 @@
-package edu.uptc.entity;
+package edu.uptc.model.entity;
 
 import java.sql.Date;
 import java.util.ArrayList;
@@ -15,7 +15,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="conductor_tabla")
-@PrimaryKeyJoinColumn(referencedColumnName = "persona_tabla_documento")
+@PrimaryKeyJoinColumn(referencedColumnName = "documento")
 public class Conductor extends Person {
 
 	@Column(name = "fecha_expedicion_licencia")
@@ -24,11 +24,11 @@ public class Conductor extends Person {
 	private Date dateExpiration;
 	@Column(name = "estado")
 	private String state;
-	@OneToOne(mappedBy = "conductor",  cascade = {CascadeType.ALL})
+	@OneToOne(mappedBy = "conductor",  cascade = CascadeType.ALL)
 	@JoinColumn(name = "c_documento", referencedColumnName = "documento")
 	private Vehicle vehicle;
 	@OneToMany(mappedBy = "conductor", cascade = {CascadeType.ALL})
-	@JoinColumn(name = "c_person_documento", referencedColumnName = "documento")
+//	@JoinColumn(name = "c_person_documento", referencedColumnName = "documento")
 	private List<PenaltyFee> penaltyFeesList;
 	
 	public Conductor() {

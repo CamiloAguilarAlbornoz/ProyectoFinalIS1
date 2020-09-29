@@ -7,7 +7,8 @@
 		<title>Controlador de conductores</title>
 	</head>
 	<body>
-		<form method="post" action="ConductorServlet">
+		<h1>Control de Conductores</h1>
+		<form method="get" action="ConductorServlet">
 			<input type="submit" value="Crear conductor" name="control"/>
 			<input type="submit" value="Listado de conductores" name="control"/>
 			<input type="submit" value="Eliminar conductor" name="control"/>

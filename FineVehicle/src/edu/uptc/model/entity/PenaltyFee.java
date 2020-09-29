@@ -1,10 +1,11 @@
-package edu.uptc.entity;
+package edu.uptc.model.entity;
 
 import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -24,8 +25,10 @@ public class PenaltyFee {
 	@Column(name = "valor_multa")
 	private int value;
 	@ManyToOne
+	@JoinColumn(name = "conductor_documento")
 	private Conductor conductor;
 	@ManyToOne
+	@JoinColumn(name = "agente_numero_agente")
 	private Agent agent;
 	
 	public PenaltyFee() {}

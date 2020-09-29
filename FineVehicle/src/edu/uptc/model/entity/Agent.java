@@ -1,4 +1,4 @@
-package edu.uptc.entity;
+package edu.uptc.model.entity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,20 +6,20 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
+//import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "agente_tabla")
-@PrimaryKeyJoinColumn(referencedColumnName = "numero_agente")
+@PrimaryKeyJoinColumn(referencedColumnName = "documento")
 public class Agent extends Person {
 
 	@Column(name="estado")
 	private String state;
-	@OneToMany(mappedBy = "agent", cascade = {CascadeType.ALL})
-	@JoinColumn(name = "a_person_documento", referencedColumnName = "documento")
+	@OneToMany(mappedBy = "agent", cascade = CascadeType.ALL)
+//	@JoinColumn(name = "a_person_documento", referencedColumnName = "documento")
 	private List<PenaltyFee> penaltyFeesList;
 
 	public Agent() {

@@ -8,6 +8,6 @@
 	</head>
 	<body>
 		<h1>Estamos con usted para el pago de sus infracciones</h1>
-		<a href="controlConductor.jsp">Conductore</a>
+		<a href="controlConductor.jsp">Conductores</a>
 	</body>
 </html>

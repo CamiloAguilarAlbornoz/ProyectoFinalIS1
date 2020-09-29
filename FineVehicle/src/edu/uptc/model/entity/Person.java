@@ -1,4 +1,4 @@
-package edu.uptc.entity;
+package edu.uptc.model.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

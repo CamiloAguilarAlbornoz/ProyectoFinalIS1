@@ -1,6 +1,8 @@
 package edu.uptc.controller;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,6 +21,7 @@ public class ConductorServlet extends HttpServlet {
 	private static final String SHOW = "Listado de conductores";
 	private static final String REMOVE = "Eliminar conductor";
 	private static final String UPDATE = "Modificar conductor";
+	private static final String ADD_CONDUCTOR_JSP = "/addConductor.jsp";
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -32,16 +35,9 @@ public class ConductorServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		switch (request.getParameter(MENU)) {
 		case CREATE:
-			
+			create(request, response);
 			break;
 		case SHOW:
 			
@@ -53,5 +49,15 @@ public class ConductorServlet extends HttpServlet {
 			
 			break;
 		}
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {}
+
+	private void create(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		RequestDispatcher dispatcher = request.getRequestDispatcher(ADD_CONDUCTOR_JSP);
+        dispatcher.forward(request, response);
 	}
 }
