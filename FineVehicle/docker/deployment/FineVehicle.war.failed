@@ -1,7 +1,0 @@
-"{
-    \"WFLYCTL0412: Required services that are not installed:\" => [\"jboss.naming.context.java.\\\"Data Bases\\\"\"],
-    \"WFLYCTL0180: Services with missing/unavailable dependencies\" => [
-        \"jboss.persistenceunit.\\\"FineVehicle.war#FineVehicle\\\" is missing [jboss.naming.context.java.\\\"Data Bases\\\"]\",
-        \"jboss.persistenceunit.\\\"FineVehicle.war#FineVehicle\\\".__FIRST_PHASE__ is missing [jboss.naming.context.java.\\\"Data Bases\\\"]\"
-    ]
-}"

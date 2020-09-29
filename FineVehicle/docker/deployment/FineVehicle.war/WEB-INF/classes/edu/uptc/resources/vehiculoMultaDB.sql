@@ -35,23 +35,23 @@ CREATE TABLE IF NOT EXISTS `vehiculo_tabla` (
 -- Table `conductor_tabla`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `conductor_tabla` (
-  `persona_tabla_documento` INT NOT NULL,
+  `documento` INT NOT NULL,
   `fecha_expedicion_licencia` DATE NOT NULL,
   `fecha_expiracion_licencia` DATE NOT NULL,
   `estado` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`persona_tabla_documento`),
+  PRIMARY KEY (`documento`),
   CONSTRAINT `fk_conductor_tabla_persona_tabla`
-  	FOREIGN KEY (`persona_tabla_documento`)
+  	FOREIGN KEY (`documento`)
   	REFERENCES `persona_tabla` (`documento`)
   ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 
 CREATE TABLE IF NOT EXISTS `agente_tabla` (
-  `numero_agente` INT NOT NULL,
+  `documento` INT NOT NULL,
   `estado` VARCHAR(45) NOT NULL,  
-  PRIMARY KEY (`numero_agente`),
+  PRIMARY KEY (`documento`),
   CONSTRAINT `fk_agente_tabla_persona_tabla`
-    FOREIGN KEY (`numero_agente`)
+    FOREIGN KEY (`documento`)
     REFERENCES `persona_tabla` (`documento`)
   ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
