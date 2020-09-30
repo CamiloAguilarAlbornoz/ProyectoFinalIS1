@@ -19,8 +19,11 @@ public class Person {
 	protected String lastName;
 	@Column(name="direccion")
 	protected String direction;
+	@Column(name = "estado")
+	protected String state;
 
-	public Person(int document, String name, String lastName, String direction) {
+	public Person(String state, int document, String name, String lastName, String direction) {
+		this.state = state;
 		this.document = document;
 		this.name = name;
 		this.lastName = lastName;
@@ -59,5 +62,13 @@ public class Person {
 
 	public void setDirection(String direction) {
 		this.direction = direction;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
 	}
 }

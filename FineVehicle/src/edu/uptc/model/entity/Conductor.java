@@ -22,8 +22,6 @@ public class Conductor extends Person {
 	private Date dateExpedition;
 	@Column(name = "fecha_expiracion_licencia")
 	private Date dateExpiration;
-	@Column(name = "estado")
-	private String state;
 	@OneToOne(mappedBy = "conductor",  cascade = CascadeType.ALL)
 	@JoinColumn(name = "c_documento", referencedColumnName = "documento")
 	private Vehicle vehicle;
@@ -35,12 +33,11 @@ public class Conductor extends Person {
 		penaltyFeesList = new ArrayList<PenaltyFee>();
 	}
 
-	public Conductor(int document, String name, String lastName, String direction, Date dateExpedition,
-			Date dateExpiration, String state) {
-		super(document, name, lastName, direction);
+	public Conductor(String state, int document, String name, String lastName, String direction, Date dateExpedition,
+			Date dateExpiration) {
+		super(state, document, name, lastName, direction);
 		this.dateExpedition = dateExpedition;
 		this.dateExpiration = dateExpiration;
-		this.state = state;
 		penaltyFeesList = new ArrayList<PenaltyFee>();
 	}
 
@@ -58,14 +55,6 @@ public class Conductor extends Person {
 
 	public void setDateExpiration(Date dateExpiration) {
 		this.dateExpiration = dateExpiration;
-	}
-
-	public String getState() {
-		return state;
-	}
-
-	public void setState(String state) {
-		this.state = state;
 	}
 
 	public Vehicle getVehicle() {

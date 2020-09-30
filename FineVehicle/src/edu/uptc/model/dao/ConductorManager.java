@@ -39,8 +39,8 @@ public class ConductorManager {
 			if ((year > MIN_YEAR && year <= LocalDate.now().getYear()) &&
 					(isValidate(dateExpedition, dateExpiration))) {
 				Vehicle vehicle = new Vehicle(document, licensePlate, trademark, year);
-				Conductor conductor  = new Conductor(document, name, lastName, direction, dateExpedition, dateExpiration, 
-						STATE_CONDUCTOR.ACTIVE.name());
+				Conductor conductor  = new Conductor(STATE_CONDUCTOR.ACTIVE.toString(), document, name, lastName, direction, 
+						dateExpedition, dateExpiration);
 				vehicle.setConductor(conductor);
 				conductor.setVehicle(vehicle);
 				return conductor;

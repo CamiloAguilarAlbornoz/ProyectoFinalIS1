@@ -42,35 +42,30 @@ public class ConductorServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		switch (request.getParameter(MENU)) {
 		case CREATE:
-			create(request, response);
+			change(request, response, ADD_CONDUCTOR_JSP);
 			break;
 		case SHOW:
 			read(request, response);
 			break;
 		case REMOVE:
-			remove(request, response);
+			change(request, response, REMOVE_CONDUCTOR_JSP);
 			break;
 		case UPDATE:
 			
 			break;
 		}
 	}
-
-	private void remove(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher dispatcher = request.getRequestDispatcher(REMOVE_CONDUCTOR_JSP);
+	
+	private void change(HttpServletRequest request, HttpServletResponse response, String page) 
+			throws ServletException, IOException {
+		RequestDispatcher dispatcher = request.getRequestDispatcher(page);
         dispatcher.forward(request, response);
 	}
 
 	private void read(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ConductorManager conductorManager = new ConductorManager();
 		request.getSession().setAttribute(ATTRIBUTE_LIST, conductorManager.findAllConductors());
-		RequestDispatcher dispatcher = request.getRequestDispatcher(FIND_ALL_CONDUCTORS_JSP);
-        dispatcher.forward(request, response);
-	}
-
-	private void create(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher dispatcher = request.getRequestDispatcher(ADD_CONDUCTOR_JSP);
-        dispatcher.forward(request, response);
+		change(request, response, FIND_ALL_CONDUCTORS_JSP);
 	}
 	
 	/**

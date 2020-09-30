@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 //import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
@@ -16,8 +15,6 @@ import javax.persistence.Table;
 @PrimaryKeyJoinColumn(referencedColumnName = "documento")
 public class Agent extends Person {
 
-	@Column(name="estado")
-	private String state;
 	@OneToMany(mappedBy = "agent", cascade = CascadeType.ALL)
 //	@JoinColumn(name = "a_person_documento", referencedColumnName = "documento")
 	private List<PenaltyFee> penaltyFeesList;
@@ -27,17 +24,8 @@ public class Agent extends Person {
 	}
 
 	public Agent(int document, String name, String lastName, String direction, String state) {
-		super(document, name, lastName, direction);
-		this.state = state;
+		super(state, document, name, lastName, direction);
 		penaltyFeesList = new ArrayList<PenaltyFee>();
-	}
-
-	public String getState() {
-		return state;
-	}
-
-	public void setState(String state) {
-		this.state = state;
 	}
 
 	public List<PenaltyFee> getPenaltyFeesList() {
