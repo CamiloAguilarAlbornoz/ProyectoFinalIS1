@@ -1,7 +1,5 @@
 package edu.uptc.model.entity;
 
-import java.sql.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -18,13 +16,13 @@ public class Vehicle {
 	@Column(name="marca")
 	private String trademark;
 	@Column(name="anio")
-	private Date year;
+	private int year;
 	@Column(name="documento")
 	private int document;
 	@OneToOne
 	private Conductor conductor;
 	
-	public Vehicle(int document, String licensePlate, String trademark, Date year) {
+	public Vehicle(int document, String licensePlate, String trademark, int year) {
 		this.document = document;
 		this.licensePlate = licensePlate;
 		this.trademark = trademark;
@@ -49,11 +47,11 @@ public class Vehicle {
 		this.trademark = trademark;
 	}
 
-	public Date getYear() {
+	public int getYear() {
 		return year;
 	}
 
-	public void setYear(Date year) {
+	public void setYear(int year) {
 		this.year = year;
 	}
 

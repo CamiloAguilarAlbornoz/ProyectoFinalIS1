@@ -67,7 +67,7 @@
 				<tr>
 					<td>Ingrese el año del vehiculo</td>
 					<td>
-						<input placeholder="Fecha" name="year" type="date" required/>
+						<input placeholder="Año" name="year" type="number" required/>
 					</td>
 				</tr>
 			</table>

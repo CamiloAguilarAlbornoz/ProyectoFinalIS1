@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS `persona_tabla` (
 CREATE TABLE IF NOT EXISTS `vehiculo_tabla` (
   `placa` VARCHAR(255) NOT NULL,
   `marca` VARCHAR(255) NOT NULL,
-  `anio` DATE NOT NULL,
+  `anio` INT NOT NULL,
   `documento` INT NOT NULL,
   PRIMARY KEY (`placa`),
   CONSTRAINT `fk_conductor_tabla_persona_tabla1`
