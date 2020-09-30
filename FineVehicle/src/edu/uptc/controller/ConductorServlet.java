@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import edu.uptc.model.dao.ConductorManager;
+
 /**
  * Servlet implementation class ConductorServlet
  */
@@ -22,6 +24,8 @@ public class ConductorServlet extends HttpServlet {
 	private static final String REMOVE = "Eliminar conductor";
 	private static final String UPDATE = "Modificar conductor";
 	private static final String ADD_CONDUCTOR_JSP = "/addConductor.jsp";
+	private static final String ATTRIBUTE_LIST = "listConductor";
+	private static final String FIND_ALL_CONDUCTORS_JSP = "/findAllConductors.jsp";
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -40,7 +44,7 @@ public class ConductorServlet extends HttpServlet {
 			create(request, response);
 			break;
 		case SHOW:
-			
+			read(request, response);
 			break;
 		case REMOVE:
 			
@@ -49,6 +53,13 @@ public class ConductorServlet extends HttpServlet {
 			
 			break;
 		}
+	}
+
+	private void read(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		ConductorManager conductorManager = new ConductorManager();
+		request.getSession().setAttribute(ATTRIBUTE_LIST, conductorManager.findAllConductors());
+		RequestDispatcher dispatcher = request.getRequestDispatcher(FIND_ALL_CONDUCTORS_JSP);
+        dispatcher.forward(request, response);
 	}
 
 	/**

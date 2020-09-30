@@ -3,6 +3,7 @@ package edu.uptc.model.dao;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -20,6 +21,8 @@ public class ConductorManager {
 	private static final int MIN_YEAR = 1960;
 	private static final String EXCEPTION_REPEAT_VEHICLE = "Ya se ha realizado un registro con datos similares";
 	private static final String EXCEPTION_DATE = "Mal ingreso de fechas";
+	private static final String EXEPTION_READ_VEHICLE = "Can't find Vehicle for licensePlate ";
+	private static final String SELECT_ALL = "SELECT e FROM Conductor e";
 	
 	private static EntityManager entityManager;
 	private EntityManagerFactory entityManagerFactory;
@@ -55,10 +58,9 @@ public class ConductorManager {
 		entityManager.getTransaction().commit();
 	}
 	
-	public void removeConductor(Conductor conductor) {
-		entityManager.getTransaction().begin();
-		entityManager.remove(conductor);
-		entityManager.getTransaction().commit();
+	@SuppressWarnings("unchecked")
+	public List<Conductor> findAllConductors() {
+		return entityManager.createQuery(SELECT_ALL).getResultList();
 	}
 	
 	private static boolean existVehicle(String licensePlate) {
@@ -74,17 +76,9 @@ public class ConductorManager {
 	private static Vehicle readVehicle(String licensePlate) {
 		Vehicle vehicle = entityManager.find(Vehicle.class, licensePlate);
 		if (vehicle == null) {
-			throw new EntityNotFoundException("Can't find Vehicle for licensePlate "+ licensePlate);
+			throw new EntityNotFoundException(EXEPTION_READ_VEHICLE+ licensePlate);
 		}
 		return vehicle;
-	}
-
-	public Conductor readConductor(int document) {
-		Conductor conductor = entityManager.find(Conductor.class, document);
-   		if (conductor == null) {
-    		throw new EntityNotFoundException("Can't find Conductor for document "+ document);
-   		}
-		return conductor;
 	}
 	
 	private static boolean isValidate(Date dateExpedition, Date dateExpiration) {
