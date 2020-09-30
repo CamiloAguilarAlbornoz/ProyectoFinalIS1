@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import edu.uptc.model.dao.ConductorManager;
+import edu.uptc.model.dao.PersonManager;
 import edu.uptc.model.entity.Conductor;
 
 /**
@@ -65,10 +66,10 @@ public class AddConductorServlet extends HttpServlet {
 			int year = Integer.valueOf(request.getParameter(YEAR_VEHICLE));
 			// --------------------- Crear y agregar vehiculo --------------------------------------
 			try {
-				ConductorManager conductorManager = new ConductorManager();
+				PersonManager personManager = new PersonManager();
 				Conductor conductor = ConductorManager.createConductor(document, name, lastName, direction, 
 						dateExpedition, dateExpiration, licensePlate, trademark, year);
-				conductorManager.addConductor(conductor);
+				personManager.addPerson(conductor);
 				RequestDispatcher dispatcher = request.getRequestDispatcher(GREAT_ADD_CONDUCTOR_JSP);
 		        dispatcher.forward(request, response);
 			} catch (Exception e) {

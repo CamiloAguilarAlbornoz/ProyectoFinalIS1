@@ -12,6 +12,7 @@ CREATE TABLE IF NOT EXISTS `persona_tabla` (
   `nombre` VARCHAR(255) NOT NULL,
   `apellido` VARCHAR(255) NOT NULL,
   `direccion` VARCHAR(255) NOT NULL,
+  `estado` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`documento`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -38,7 +39,6 @@ CREATE TABLE IF NOT EXISTS `conductor_tabla` (
   `documento` INT NOT NULL,
   `fecha_expedicion_licencia` DATE NOT NULL,
   `fecha_expiracion_licencia` DATE NOT NULL,
-  `estado` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`documento`),
   CONSTRAINT `fk_conductor_tabla_persona_tabla`
   	FOREIGN KEY (`documento`)
@@ -48,7 +48,6 @@ CREATE TABLE IF NOT EXISTS `conductor_tabla` (
 
 CREATE TABLE IF NOT EXISTS `agente_tabla` (
   `documento` INT NOT NULL,
-  `estado` VARCHAR(45) NOT NULL,  
   PRIMARY KEY (`documento`),
   CONSTRAINT `fk_agente_tabla_persona_tabla`
     FOREIGN KEY (`documento`)

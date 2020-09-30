@@ -26,6 +26,7 @@ public class ConductorServlet extends HttpServlet {
 	private static final String ADD_CONDUCTOR_JSP = "/addConductor.jsp";
 	private static final String ATTRIBUTE_LIST = "listConductor";
 	private static final String FIND_ALL_CONDUCTORS_JSP = "/findAllConductors.jsp";
+	private static final String REMOVE_CONDUCTOR_JSP = "/removeConductor.jsp";
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -47,12 +48,17 @@ public class ConductorServlet extends HttpServlet {
 			read(request, response);
 			break;
 		case REMOVE:
-			
+			remove(request, response);
 			break;
 		case UPDATE:
 			
 			break;
 		}
+	}
+
+	private void remove(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		RequestDispatcher dispatcher = request.getRequestDispatcher(REMOVE_CONDUCTOR_JSP);
+        dispatcher.forward(request, response);
 	}
 
 	private void read(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -62,13 +68,13 @@ public class ConductorServlet extends HttpServlet {
         dispatcher.forward(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {}
-
 	private void create(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		RequestDispatcher dispatcher = request.getRequestDispatcher(ADD_CONDUCTOR_JSP);
         dispatcher.forward(request, response);
 	}
+	
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {}
 }

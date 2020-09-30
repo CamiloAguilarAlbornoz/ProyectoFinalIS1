@@ -17,12 +17,12 @@ import edu.uptc.model.entity.Vehicle;
 
 public class ConductorManager {
 
+	private static final String SELECT_ALL_CONDUCTORS = "SELECT e FROM Conductor e";
 	private static final String NAME_WEB_APP = "FineVehicle";
 	private static final int MIN_YEAR = 1960;
 	private static final String EXCEPTION_REPEAT_VEHICLE = "Ya se ha realizado un registro con datos similares";
 	private static final String EXCEPTION_DATE = "Mal ingreso de fechas";
 	private static final String EXEPTION_READ_VEHICLE = "Can't find Vehicle for licensePlate ";
-	private static final String SELECT_ALL = "SELECT e FROM Conductor e";
 	
 	private static EntityManager entityManager;
 	private EntityManagerFactory entityManagerFactory;
@@ -51,17 +51,6 @@ public class ConductorManager {
 			throw new ReaderException(EXCEPTION_REPEAT_VEHICLE);
 		}
 	}
-
-	public void addConductor(Conductor conductor) {
-		entityManager.getTransaction().begin();
-		entityManager.persist(conductor);
-		entityManager.getTransaction().commit();
-	}
-	
-	@SuppressWarnings("unchecked")
-	public List<Conductor> findAllConductors() {
-		return entityManager.createQuery(SELECT_ALL).getResultList();
-	}
 	
 	private static boolean existVehicle(String licensePlate) {
 		boolean exist = true;
@@ -86,5 +75,10 @@ public class ConductorManager {
 		LocalDate expiration = dateExpiration.toLocalDate();
 		Period period = Period.between(expedition, expiration);
 		return period.getYears() > 0;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Conductor> findAllConductors() {
+		return entityManager.createQuery(SELECT_ALL_CONDUCTORS).getResultList();
 	}
 }
