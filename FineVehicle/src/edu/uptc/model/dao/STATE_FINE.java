@@ -1,0 +1,6 @@
+package edu.uptc.model.dao;
+
+public enum STATE_FINE {
+
+	NOTIFICADA, EN_APELACION, RATIFICADA, ANULADA, COBRO_JURIDICO, PAGADA
+}

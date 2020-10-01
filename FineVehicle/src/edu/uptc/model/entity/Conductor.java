@@ -72,4 +72,8 @@ public class Conductor extends Person {
 	public void setPenaltyFeesList(List<PenaltyFee> penaltyFeesList) {
 		this.penaltyFeesList = penaltyFeesList;
 	}
+	
+	public void addFine(PenaltyFee penaltyFee) {
+		penaltyFeesList.add(penaltyFee);
+	}
 }

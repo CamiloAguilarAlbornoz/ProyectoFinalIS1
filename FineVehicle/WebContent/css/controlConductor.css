@@ -1,29 +1,30 @@
 body {
-  margin: 0;
-  background-image: url("https://i.pinimg.com/originals/a7/6a/bb/a76abbfcf9c095a06d087887a1ad91ff.png");
-  background-size: contain;
+	margin: 0;
+	background-image:
+		url("https://i.pinimg.com/originals/a7/6a/bb/a76abbfcf9c095a06d087887a1ad91ff.png");
+	background-size: contain;
 }
 
 .main-header {
-  position: relative;
-  padding: 1%;
-  font-family: "Merriweather", serif;
-  font-size: small;
-  text-align: center;
-  color: white;
-  background-color: #4d586f;
+	position: relative;
+	padding: 1%;
+	font-family: "Merriweather", serif;
+	font-size: small;
+	text-align: center;
+	color: white;
+	background-color: #4d586f;
 }
 
 .main {
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-  justify-items: center;
-  color: white;
-  margin: 6%;
-  padding-bottom: 5%;
-  border: black 5px double;
-  background-color: #cbc5c0;
+	display: flex;
+	text-align: center;
+	flex-direction: column;
+	justify-items: center;
+	color: white;
+	margin: 6%;
+	padding-bottom: 5%;
+	border: black 5px double;
+	background-color: #cbc5c0;
 }
 
 .flex-container {
@@ -56,6 +57,31 @@ body {
 .img-1 {
   background: url(https://www.flaticon.es/svg/static/icons/svg/3556/3556656.svg) center no-repeat;
   background-size: cover;
+
+.grid-container {
+	display: flex;
+	justify-content: center;
+	flex-flow: row wrap;
+}
+
+.container {
+	background-color: #A2AAAF;
+	position: relative;
+	width: 20%;
+	height: auto;
+	border: 1px black solid;
+	margin: 1%;
+}
+
+.container:hover {
+	background-color: #4d586f;
+	border: 1px gray solid;
+}
+
+.image-button {
+	width: 100%;
+	height: auto;
+	object-fit: contain;
 }
 
 .img-2 {
@@ -71,20 +97,20 @@ body {
   background: url(https://www.flaticon.es/svg/static/icons/svg/835/835958.svg) center no-repeat;
 }
 inside-text {
-  font-family: "Merriweather", serif;
-  position: absolute;
-  bottom: 2px;
-  right: 2px;
+	font-family: "Merriweather", serif;
+	position: absolute;
+	bottom: 2px;
+	right: 2px;
 }
 
 .button {
-    margin-top: 3%;
-    background-color: #4D586F;
-    padding: 2%;
-    color: #EBECED;
+	margin-top: 3%;
+	background-color: #4D586F;
+	padding: 2%;
+	color: #EBECED;
 }
 
 a {
-  color: #ebeced;
-  text-decoration: none;
+	color: #ebeced;
+	text-decoration: none;
 }
