@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-	<!DOCTYPE html>
-	<html>
-	
+<!DOCTYPE html>
+<html>
 	<head>
 		<meta charset="UTF-8" />
 		<title>Gestion de Conductores</title>
@@ -10,12 +9,10 @@
 		<link rel="stylesheet" href="css/controlConductor.css" type="text/css" media="all" />
 		<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
 	</head>
-	
 	<body>
 		<header class="main-header">
 			<h1 class="title">Sistema Integrado de Multas e Infracciones</h1>
 		</header>
-	
 		<section class="main">
 			<h1>Control de Conductores</h1>
 			<form id="myform" method="get" action="ConductorServlet">
@@ -39,8 +36,7 @@
 					</article>
 				</div>
 			</form>
-			<a href="index.html"><button class="button">Volver al inicio</button></a>
+			<a href="index.jsp"><button class="button">Volver al inicio</button></a>
 		</section>
 	</body>
-	
-	</html>
+</html>
