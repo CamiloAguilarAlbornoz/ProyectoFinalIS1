@@ -1,0 +1,77 @@
+package edu.uptc.controller;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import edu.uptc.model.dao.ConductorManager;
+
+/**
+ * Servlet implementation class AgentServlet
+ */
+@WebServlet("/AgentServlet")
+public class AgentServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	
+	private static final String MENU = "control";
+	private static final String CREATE = "Crear agente";
+	private static final String SHOW = "Listado de agentes";
+	private static final String REMOVE = "Eliminar agente";
+	private static final String UPDATE = "Modificar agente";
+	private static final String ADD_AGENT_JSP = "/addAgent.jsp";
+	private static final String ATTRIBUTE_LIST = "listConductor";
+	private static final String FIND_ALL_CONDUCTORS_JSP = "/findAllConductors.jsp";
+	private static final String REMOVE_CONDUCTOR_JSP = "/removeConductor.jsp";
+	private static final String MODIFY_CONDUCTOR_JSP = "/modifyConductor.jsp";
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public AgentServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		switch (request.getParameter(MENU)) {
+		case CREATE:
+			change(request, response, ADD_AGENT_JSP);
+			break;
+		case SHOW:
+			read(request, response);
+			break;
+		case REMOVE:
+			change(request, response, REMOVE_CONDUCTOR_JSP);
+			break;
+		case UPDATE:
+			change(request, response, MODIFY_CONDUCTOR_JSP);
+			break;
+		}
+	}
+	
+	private void change(HttpServletRequest request, HttpServletResponse response, String page) 
+			throws ServletException, IOException {
+		RequestDispatcher dispatcher = request.getRequestDispatcher(page);
+        dispatcher.forward(request, response);
+	}
+	
+	private void read(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		ConductorManager conductorManager = new ConductorManager();
+		request.getSession().setAttribute(ATTRIBUTE_LIST, conductorManager.findAllConductors());
+		change(request, response, FIND_ALL_CONDUCTORS_JSP);
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {}
+
+}

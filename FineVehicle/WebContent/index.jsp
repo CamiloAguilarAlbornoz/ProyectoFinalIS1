@@ -14,14 +14,16 @@
 			<h1 class="title">Sistema Integrado de Multas e Infracciones </h1>
 		</header>
 		<section class="main">
-		<div class="container">
-			<h2>Estamos con usted para el pago de sus infracciones</h2>
-			<a href="controlConductor.jsp"><button class="button">Acceder al sistema de conductores</button></a>
-			<a href="controlAgent.jsp"><button class="button">Acceder al sistema de agentes</button></a>
-		</div>
-		<div class="container">
-			<img src="https://lh3.googleusercontent.com/proxy/_b1jWAOAC53cqj_YIANM_AJ9jOiVgnr-_BnrBbLJF2hktaKmy1IuL0Va2OlobOJprt0UnikIxIpr9LTIwGeWlpFKPkJWy7qX9aIQJfzqS8eurWf44ODefUwp" alt="transito vehicular">
-		</div>
-	</section>
+			<div class="container">
+				<h2>Estamos con usted para el pago de sus infracciones</h2>
+				<a href="controlConductor.jsp"><button class="button">Acceder al sistema de conductores</button></a>
+				<br>
+				<br>
+				<a href="controlAgent.jsp"><button class="button">Acceder al sistema de agentes</button></a>
+			</div>
+			<div class="container">
+				<img src="https://lh3.googleusercontent.com/proxy/_b1jWAOAC53cqj_YIANM_AJ9jOiVgnr-_BnrBbLJF2hktaKmy1IuL0Va2OlobOJprt0UnikIxIpr9LTIwGeWlpFKPkJWy7qX9aIQJfzqS8eurWf44ODefUwp" alt="transito vehicular">
+			</div>
+		</section>
 	</body>
 </html>
