@@ -15,8 +15,9 @@
 		</header>
 		<section class="main">
 		<div class="container">
-			<h1>Estamos con usted para el pago de sus infracciones</h1>
-			<a href="controlConductor.jsp"><button class="button">Acceder al sistema</button></a>
+			<h2>Estamos con usted para el pago de sus infracciones</h2>
+			<a href="controlConductor.jsp"><button class="button">Acceder al sistema de conductores</button></a>
+			<a href="controlAgent.jsp"><button class="button">Acceder al sistema de agentes</button></a>
 		</div>
 		<div class="container">
 			<img src="https://lh3.googleusercontent.com/proxy/_b1jWAOAC53cqj_YIANM_AJ9jOiVgnr-_BnrBbLJF2hktaKmy1IuL0Va2OlobOJprt0UnikIxIpr9LTIwGeWlpFKPkJWy7qX9aIQJfzqS8eurWf44ODefUwp" alt="transito vehicular">
