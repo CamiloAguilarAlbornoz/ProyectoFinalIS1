@@ -19,30 +19,23 @@
 		<section class="main">
 			<h1>Control de Conductores</h1>
 			<form id="myform" method="get" action="ConductorServlet">
-				<div class="grid-container">
-					<article class="container">
-						<input class="image-button" type="image" value="Crear conductor" name="control" src="https://www.flaticon.es/svg/static/icons/svg/3556/3556656.svg" alt="flecha adelante" />
-						<div class="inside-text">Crear Conductor</div>
-					</article>
-					<article class="container">
-						<a href="">
-							<input class="image-button" type="image" value="Listado de conductores" name="control" src="https://www.flaticon.es/svg/static/icons/svg/3500/3500043.svg"
-								alt="señales invertidas" />
-							<div class="inside-text">Listado de Conductores</div>
-						</a>
-					</article>
-					<article class="container">
-						<a href="">
-							<input class="image-button" type="image" value="Eliminar conductor" name="control" src="https://www.flaticon.es/svg/static/icons/svg/879/879386.svg" alt="señal de stop" />
-							<div class="inside-text">Eliminar conductor</div>
-						</a>
-					</article>
-					<article class="container">
-						<a href="">
-							<input class="image-button" type="image" value="Modificar conductor" name="control" src="https://www.flaticon.es/svg/static/icons/svg/835/835958.svg" alt="transeuntes" />
-							<div class="inside-text">Modificar conductor</div>
-						</a>
-					</article>
+				<div class="flex-container">
+					<div class="container">
+						<input class="image-button img-1" value="" type="submit" name="CrearConductor" alt="flecha adelante"/>
+						<div class="inside-text">Crear conductor</div>
+					</div>
+					<div class="container">
+						<input class="image-button img-2" value="" type="submit" name="ListadoConductores" alt="flecha adelante"/>
+						<div class="inside-text">Listado de Conductores</div>
+					</div>
+					<div class="container">
+						<input class="image-button img-3" value="" type="submit" name="Eliminar conductor" alt="flecha adelante"/>
+						<div class="inside-text">Eliminar conductor</div>
+					</div>
+					<div class="container">
+						<input class="image-button img-4" value="" type="submit" name="Modificar conductor" alt="flecha adelante"/>
+						<div class="inside-text">Modificar conductor</div>
+					</div>
 				</div>
 			</form>
 			<a href="index.html"><button class="button">Volver al inicio</button></a>

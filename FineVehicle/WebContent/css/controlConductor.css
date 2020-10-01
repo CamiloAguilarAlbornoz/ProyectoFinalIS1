@@ -26,32 +26,50 @@ body {
   background-color: #cbc5c0;
 }
 
-.grid-container {
+.flex-container {
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
 }
 
 .container {
-    background-color: #A2AAAF;
-  position: relative;
   width: 20%;
   height: auto;
-  border: 1px black solid;
-  margin: 1%;
+  margin: 2%;
+  background-color: #A2AAAF;
+  border: 2px solid #4d586f;
 }
 
 .container:hover {
-    background-color: #4d586f;
-    border: 1px gray solid;
+  background-color: #4d586f;
 }
 
 .image-button {
+  position: relative;
   width: 100%;
   height: auto;
-  object-fit: contain;
+  padding: 50% 0;
+  border: 0;
+  
 }
 
+.img-1 {
+  background: url(https://www.flaticon.es/svg/static/icons/svg/3556/3556656.svg) center no-repeat;
+  background-size: cover;
+}
+
+.img-2 {
+  background: url(https://www.flaticon.es/svg/static/icons/svg/3500/3500043.svg) center no-repeat;
+  background-size: cover;
+}
+
+.img-3 {
+  background: url(https://www.flaticon.es/svg/static/icons/svg/879/879386.svg) center no-repeat;
+}
+
+.img-4 {
+  background: url(https://www.flaticon.es/svg/static/icons/svg/835/835958.svg) center no-repeat;
+}
 inside-text {
   font-family: "Merriweather", serif;
   position: absolute;
