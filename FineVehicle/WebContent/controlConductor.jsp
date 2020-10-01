@@ -16,6 +16,23 @@
 		<section class="main">
 			<h1>Control de Conductores</h1>
 			<form id="myform" method="get" action="ConductorServlet">
+				<div class="flex-container">
+					<div class="container">
+						<input class="image-button img-1" value="" type="submit" name="CrearConductor" alt="flecha adelante"/>
+						<div class="inside-text">Crear conductor</div>
+					</div>
+					<div class="container">
+						<input class="image-button img-2" value="" type="submit" name="ListadoConductores" alt="flecha adelante"/>
+						<div class="inside-text">Listado de Conductores</div>
+					</div>
+					<div class="container">
+						<input class="image-button img-3" value="" type="submit" name="Eliminar conductor" alt="flecha adelante"/>
+						<div class="inside-text">Eliminar conductor</div>
+					</div>
+					<div class="container">
+						<input class="image-button img-4" value="" type="submit" name="Modificar conductor" alt="flecha adelante"/>
+						<div class="inside-text">Modificar conductor</div>
+					</div>
 				<div class="grid-container">
 					<article class="container">
 						<input class="image-button" type="image" value="Crear conductor" name="control"
