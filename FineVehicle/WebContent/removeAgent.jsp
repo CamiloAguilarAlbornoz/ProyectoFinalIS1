@@ -4,15 +4,15 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Eliminar conductor</title>
+		<title>Eliminar agente</title>
 	</head>
 	<body>
 		<h1>Ingrese los datos solicitados</h1>
-		<form method="post" action="RemoveConductorServlet">
-			<label for="remove">Ingrese el documento del conductor a eliminar:</label>
+		<form method="post" action="RemoveAgentServlet">
+			<label for="remove">Ingrese el documento del agente a eliminar:</label>
 			<input id="remove" placeholder="Documento" type="number" name="documento" required/>
 			<input type="submit" value="Eliminar"/>
 		</form>
-		<a href="controlAgent.jsp">Cancelar</a>
+		<a href="controlConductor.jsp">Cancelar</a>
 	</body>
 </html>
