@@ -23,8 +23,10 @@
 		<h2>
 			${message}
 		</h2>
-		<a href="index.html"><button class="button">Volver al inicio</button></a>
+		<div>
+			<a href="index.html"><button class="button">Volver al inicio</button></a>
 		</div>
+	</section>
 </body>
 
 </html>

@@ -25,23 +25,17 @@
 						<div class="inside-text">Crear Conductor</div>
 					</article>
 					<article class="container">
-						<a href="">
-							<input class="image-button" type="image" value="Listado de conductores" name="control" src="https://www.flaticon.es/svg/static/icons/svg/3500/3500043.svg"
+					<input class="image-button" type="image" value="Listado de conductores" name="control" src="https://www.flaticon.es/svg/static/icons/svg/3500/3500043.svg"
 								alt="señales invertidas" />
 							<div class="inside-text">Listado de Conductores</div>
-						</a>
 					</article>
 					<article class="container">
-						<a href="">
-							<input class="image-button" type="image" value="Eliminar conductor" name="control" src="https://www.flaticon.es/svg/static/icons/svg/879/879386.svg" alt="señal de stop" />
+						<input class="image-button" type="image" value="Eliminar conductor" name="control" src="https://www.flaticon.es/svg/static/icons/svg/879/879386.svg" alt="señal de stop" />
 							<div class="inside-text">Eliminar conductor</div>
-						</a>
 					</article>
 					<article class="container">
-						<a href="">
-							<input class="image-button" type="image" value="Modificar conductor" name="control" src="https://www.flaticon.es/svg/static/icons/svg/835/835958.svg" alt="transeuntes" />
-							<div class="inside-text">Modificar conductor</div>
-						</a>
+						<input class="image-button" type="image" value="Modificar conductor" name="control" src="https://www.flaticon.es/svg/static/icons/svg/835/835958.svg" alt="transeuntes" />
+							<div class="inside-text">Modificar conductor</div>					
 					</article>
 				</div>
 			</form>
