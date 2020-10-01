@@ -27,6 +27,7 @@ public class ConductorServlet extends HttpServlet {
 	private static final String ATTRIBUTE_LIST = "listConductor";
 	private static final String FIND_ALL_CONDUCTORS_JSP = "/findAllConductors.jsp";
 	private static final String REMOVE_CONDUCTOR_JSP = "/removeConductor.jsp";
+	private static final String MODIFY_CONDUCTOR_JSP = "/modifyConductor.jsp";
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -51,7 +52,7 @@ public class ConductorServlet extends HttpServlet {
 			change(request, response, REMOVE_CONDUCTOR_JSP);
 			break;
 		case UPDATE:
-			
+			change(request, response, MODIFY_CONDUCTOR_JSP);
 			break;
 		}
 	}

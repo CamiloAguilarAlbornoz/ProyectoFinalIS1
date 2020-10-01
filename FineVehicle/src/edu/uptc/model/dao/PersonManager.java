@@ -5,11 +5,13 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.Persistence;
 
+import edu.uptc.model.entity.Conductor;
 import edu.uptc.model.entity.Person;
 
 public class PersonManager {
 
-	private static final String NAME_WEB_APP = "FineVehicle";private static final String WARNING_GET_PERSON = "Can't find Person for document ";
+	private static final String NAME_WEB_APP = "FineVehicle";
+	private static final String WARNING_GET_PERSON = "Can't find Person for document ";
 	
 	private static EntityManager entityManager;
 	private EntityManagerFactory entityManagerFactory;
@@ -37,5 +39,13 @@ public class PersonManager {
     		throw new EntityNotFoundException(WARNING_GET_PERSON+ document);
    		}
 		return persona;
+	}
+	
+	public Conductor findConductor(int document) {
+		Conductor conductor = entityManager.find(Conductor.class, document);
+   		if (conductor == null) {
+    		throw new EntityNotFoundException(WARNING_GET_PERSON+ document);
+   		}
+		return conductor;
 	}
 }

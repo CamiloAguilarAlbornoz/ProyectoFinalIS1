@@ -32,14 +32,14 @@ public class ConductorManager {
 		entityManager = entityManagerFactory.createEntityManager();
 	}
 	
-	public static Conductor createConductor(int document, String name, String lastName, String direction, 
+	public static Conductor createConductor(String state, int document, String name, String lastName, String direction, 
 			Date dateExpedition, Date dateExpiration, String licensePlate, String trademark, int year) 
 					throws IndexOutOfBoundsException {
 		if (!existVehicle(licensePlate)) {
 			if ((year > MIN_YEAR && year <= LocalDate.now().getYear()) &&
 					(isValidate(dateExpedition, dateExpiration))) {
 				Vehicle vehicle = new Vehicle(document, licensePlate, trademark, year);
-				Conductor conductor  = new Conductor(STATE_CONDUCTOR.ACTIVE.toString(), document, name, lastName, direction, 
+				Conductor conductor  = new Conductor(state, document, name, lastName, direction, 
 						dateExpedition, dateExpiration);
 				vehicle.setConductor(conductor);
 				conductor.setVehicle(vehicle);

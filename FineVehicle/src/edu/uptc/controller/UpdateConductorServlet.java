@@ -10,17 +10,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import edu.uptc.model.dao.ConductorManager;
 import edu.uptc.model.dao.PersonManager;
-import edu.uptc.model.dao.STATE_CONDUCTOR;
 import edu.uptc.model.entity.Conductor;
+import edu.uptc.model.entity.Vehicle;
 
 /**
- * Servlet implementation class AddConductorServlet
+ * Servlet implementation class UpdateConductorServlet
  */
-@WebServlet("/AddConductorServlet")
-public class AddConductorServlet extends HttpServlet {
-
+@WebServlet("/UpdateConductorServlet")
+public class UpdateConductorServlet extends HttpServlet {
+	
 	private static final long serialVersionUID = 1L;
 	private static final String DOCUMENT_CONDUCTOR = "document";
 	private static final String NAME_CONDUCTOR = "name";
@@ -28,32 +27,29 @@ public class AddConductorServlet extends HttpServlet {
 	private static final String DIRECTION_CONDUCTOR = "direction";
 	private static final String DATE_EXPEDITION_CONDUCTOR = "dateExpedition";
 	private static final String DATE_EXPIRATION_CONDUCTOR = "dateExpiration";
-	private static final String LICENSE_PLATE_VEHICLE = "licensePlate";
 	private static final String TRADEMARK_VEHICLE = "trademark";
 	private static final String YEAR_VEHICLE = "year";
-	private static final String GREAT_ADD_CONDUCTOR_JSP = "/great.jsp";
-	private static final String ERROR_ADD_CONDUCTOR_JSP = "/error.jsp";
 	private static final String MESSAGE = "message";
-
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
-	public AddConductorServlet() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+	private static final String GREAT_UPDATE_CONDUCTOR_JSP = "/great.jsp";
+	private static final String ERROR_UPDATE_CONDUCTOR_JSP = "/error.jsp";
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public UpdateConductorServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	}
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//------------------- Datos del Conductor -----------------------
 		try {
 			int document = Integer.parseInt(request.getParameter(DOCUMENT_CONDUCTOR));
 			String name = request.getParameter(NAME_CONDUCTOR);
@@ -62,26 +58,33 @@ public class AddConductorServlet extends HttpServlet {
 			Date dateExpedition = Date.valueOf(request.getParameter(DATE_EXPEDITION_CONDUCTOR));
 			Date dateExpiration = Date.valueOf(request.getParameter(DATE_EXPIRATION_CONDUCTOR));
 			// ------------------ Datos del vehiculo ----------------------------------------------
-			String licensePlate = request.getParameter(LICENSE_PLATE_VEHICLE);
 			String trademark = request.getParameter(TRADEMARK_VEHICLE);
 			int year = Integer.valueOf(request.getParameter(YEAR_VEHICLE));
 			// --------------------- Crear y agregar vehiculo --------------------------------------
 			try {
 				PersonManager personManager = new PersonManager();
-				Conductor conductor = ConductorManager.createConductor(STATE_CONDUCTOR.ACTIVE.toString(), document, name, lastName, direction, 
-						dateExpedition, dateExpiration, licensePlate, trademark, year);
-				personManager.addPerson(conductor);
-				RequestDispatcher dispatcher = request.getRequestDispatcher(GREAT_ADD_CONDUCTOR_JSP);
+				Conductor conductor = personManager.findConductor(document);
+				conductor.setName(name);
+				conductor.setLastName(lastName);
+				conductor.setDateExpedition(dateExpedition);
+				conductor.setDateExpiration(dateExpiration);
+				conductor.setDirection(direction);
+				Vehicle vehicle = conductor.getVehicle();
+				vehicle.setTrademark(trademark);
+				vehicle.setYear(year);
+				personManager.updatePerson(conductor);
+				RequestDispatcher dispatcher = request.getRequestDispatcher(GREAT_UPDATE_CONDUCTOR_JSP);
 		        dispatcher.forward(request, response);
 			} catch (Exception e) {
 				request.getSession().setAttribute(MESSAGE, e.getMessage());
-				RequestDispatcher dispatcher = request.getRequestDispatcher(ERROR_ADD_CONDUCTOR_JSP);
+				RequestDispatcher dispatcher = request.getRequestDispatcher(ERROR_UPDATE_CONDUCTOR_JSP);
 		        dispatcher.forward(request, response);
 			}
 		} catch (IndexOutOfBoundsException e) {
 			request.getSession().setAttribute(MESSAGE, e.getMessage());
-			RequestDispatcher dispatcher = request.getRequestDispatcher(ERROR_ADD_CONDUCTOR_JSP);
+			RequestDispatcher dispatcher = request.getRequestDispatcher(ERROR_UPDATE_CONDUCTOR_JSP);
 	        dispatcher.forward(request, response);
 		}
 	}
+
 }

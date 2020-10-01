@@ -10,7 +10,7 @@
 	<body>
 		<table border="1">
 			<tr>
-				<th colspan="8">Lista de conductores</th>
+				<th colspan="10">Lista de conductores</th>
 			</tr>
 			<tr>
 				<th>Documento</th>
@@ -21,6 +21,8 @@
 				<th>Fecha expiracion Licencia</th>
 				<th>Estado</th>
 				<th>Placa de su vehiculo</th>
+				<th>Año del vehiculo</th>
+				<th>Marca del vehiculo</th>
 				<c:forEach items="${listConductor}" var="conductor">
 					<tr>
 						<td><c:out value="${conductor.document}"></c:out></td>
@@ -31,6 +33,8 @@
 						<td><c:out value="${conductor.dateExpiration}"></c:out></td>
 						<td><c:out value="${conductor.state}"></c:out></td>
 						<td><c:out value="${conductor.vehicle.licensePlate}"></c:out></td>
+						<td><c:out value="${conductor.vehicle.year}"></c:out></td>
+						<td><c:out value="${conductor.vehicle.trademark}"></c:out></td>
 					</tr>
 				</c:forEach>
 		</table>
