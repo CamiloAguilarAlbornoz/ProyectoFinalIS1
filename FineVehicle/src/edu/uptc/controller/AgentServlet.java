@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import edu.uptc.model.dao.ConductorManager;
+import edu.uptc.model.dao.AgentManager;
 
 /**
  * Servlet implementation class AgentServlet
@@ -24,10 +24,10 @@ public class AgentServlet extends HttpServlet {
 	private static final String REMOVE = "Eliminar agente";
 	private static final String UPDATE = "Modificar agente";
 	private static final String ADD_AGENT_JSP = "/addAgent.jsp";
-	private static final String ATTRIBUTE_LIST = "listConductor";
-	private static final String FIND_ALL_CONDUCTORS_JSP = "/findAllConductors.jsp";
-	private static final String REMOVE_CONDUCTOR_JSP = "/removeConductor.jsp";
-	private static final String MODIFY_CONDUCTOR_JSP = "/modifyConductor.jsp";
+	private static final String ATTRIBUTE_LIST = "listAgent";
+	private static final String FIND_ALL_AGENTS_JSP = "/findAllAgents.jsp";
+	private static final String REMOVE_AGENT_JSP = "/removeAgent.jsp";
+	private static final String MODIFY_AGENT_JSP = "/modifyAgent.jsp";
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -49,10 +49,10 @@ public class AgentServlet extends HttpServlet {
 			read(request, response);
 			break;
 		case REMOVE:
-			change(request, response, REMOVE_CONDUCTOR_JSP);
+			change(request, response, REMOVE_AGENT_JSP);
 			break;
 		case UPDATE:
-			change(request, response, MODIFY_CONDUCTOR_JSP);
+			change(request, response, MODIFY_AGENT_JSP);
 			break;
 		}
 	}
@@ -64,9 +64,9 @@ public class AgentServlet extends HttpServlet {
 	}
 	
 	private void read(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ConductorManager conductorManager = new ConductorManager();
-		request.getSession().setAttribute(ATTRIBUTE_LIST, conductorManager.findAllConductors());
-		change(request, response, FIND_ALL_CONDUCTORS_JSP);
+		AgentManager agentManager = new AgentManager();
+		request.getSession().setAttribute(ATTRIBUTE_LIST, agentManager.findAllAgents());
+		change(request, response, FIND_ALL_AGENTS_JSP);
 	}
 
 	/**
