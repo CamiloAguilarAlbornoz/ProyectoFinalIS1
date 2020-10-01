@@ -33,12 +33,14 @@ public class PenaltyFee {
 	
 	public PenaltyFee() {}
 
-	public PenaltyFee(int id, Date date, String description, String state, int value) {
+	public PenaltyFee(int id, Date date, String description, String state, int value, Conductor conductor, Agent agent) {
 		this.id = id;
 		this.date = date;
 		this.description = description;
 		this.state = state;
 		this.value = value;
+		this.conductor = conductor;
+		this.agent = agent;
 	}
 
 	public int getId() {
