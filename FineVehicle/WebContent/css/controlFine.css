@@ -1,0 +1,110 @@
+body {
+  margin: 0;
+  background-image: url("https://i.pinimg.com/originals/a7/6a/bb/a76abbfcf9c095a06d087887a1ad91ff.png");
+  background-size: contain;
+  font-family: "Merriweather", serif;
+}
+
+.main-header {
+  position: relative;
+  padding: 1%;
+  font-size: small;
+  text-align: center;
+  color: white;
+  background-color: #4d586f;
+}
+
+.main {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-items: center;
+  color: white;
+  margin: 4%;
+  padding-bottom: 5%;
+  border: black 5px double;
+  background-color: #cbc5c0;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+.container:hover {
+  background-color: #4d586f;
+}
+
+.image-button {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 50% 0;
+  border: 0;
+}
+
+.img-1 {
+  background: url(https://www.flaticon.es/svg/static/icons/svg/2720/2720542.svg)
+    center no-repeat;
+  background-size: cover;
+}
+
+.img-2 {
+  background: url(https://www.flaticon.es/svg/static/icons/svg/3141/3141225.svg)
+    center no-repeat;
+  background-size: cover;
+}
+
+.img-3 {
+  background: url(https://www.flaticon.es/svg/static/icons/svg/2333/2333368.svg)
+    center no-repeat;
+    background-size: cover;
+}
+
+.grid-container {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+.container {
+  background-color: #a2aaaf;
+  position: relative;
+  width: 30%;
+  height: auto;
+  border: 1px black solid;
+  margin: 1%;
+}
+
+.container:hover {
+  background-color: #4d586f;
+  border: 1px gray solid;
+}
+
+.image-button {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  color: transparent;
+}
+
+inside-text {
+  font-family: "Merriweather", serif;
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+}
+
+.button {
+  margin-top: 3%;
+  background-color: #4d586f;
+  border-radius: 20px;
+  padding: 3%;
+  color: #ebeced;
+}
+
+a {
+  color: #ebeced;
+  text-decoration: none;
+}
