@@ -20,6 +20,9 @@
 				<br>
 				<br>
 				<a href="controlAgent.jsp"><button class="button">Acceder al sistema de agentes</button></a>
+				<br>
+				<br>
+				<a href="controlFine.jsp"><button class="button">Acceder al sistema de multas</button></a>
 			</div>
 			<div class="container">
 				<img src="https://lh3.googleusercontent.com/proxy/_b1jWAOAC53cqj_YIANM_AJ9jOiVgnr-_BnrBbLJF2hktaKmy1IuL0Va2OlobOJprt0UnikIxIpr9LTIwGeWlpFKPkJWy7qX9aIQJfzqS8eurWf44ODefUwp" alt="transito vehicular">

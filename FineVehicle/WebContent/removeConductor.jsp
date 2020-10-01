@@ -13,6 +13,6 @@
 			<input id="remove" placeholder="Documento" type="number" name="documento" required/>
 			<input type="submit" value="Eliminar"/>
 		</form>
-		<a href="controlAgent.jsp">Cancelar</a>
+		<a href="controlConductor.jsp">Cancelar</a>
 	</body>
 </html>
