@@ -1,6 +1,7 @@
 package edu.uptc.model.dao;
 
 import java.sql.Date;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -15,6 +16,7 @@ public class FineManager {
 	private static final String NAME_WEB_APP = "FineVehicle";
 	private static final int MIN_VALUE = 10000;
 	private static final String EXCEPTION_VALUE = "Muy barato";
+	private static final String SELECT_ALL_FINES = "SELECT e FROM PenaltyFee e";
 	
 	private static EntityManager entityManager;
 	private EntityManagerFactory entityManagerFactory;
@@ -36,5 +38,10 @@ public class FineManager {
 		entityManager.getTransaction().begin();
 		entityManager.persist(penaltyFee);
 		entityManager.getTransaction().commit();
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<PenaltyFee> findAllFines() {
+		return entityManager.createQuery(SELECT_ALL_FINES).getResultList();
 	}
 }

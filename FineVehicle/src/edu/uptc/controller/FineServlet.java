@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import edu.uptc.model.dao.AgentManager;
 import edu.uptc.model.dao.ConductorManager;
+import edu.uptc.model.dao.FineManager;
 
 /**
  * Servlet implementation class FineServlet
@@ -27,6 +28,8 @@ public class FineServlet extends HttpServlet {
 	private static final String ATTRIBUTE_LIST_AGENT = "listAgents";
 	private static final String MODIFY_FINE_JSP = "/modifyFine.jsp";
 	private static final String ADD_FINE_JSP = "/addFine.jsp";
+	private static final String ATTRIBUTE_LIST = "listFine";
+	private static final String FIND_ALL_FINE_JSP = "findAllFine.jsp";
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -68,9 +71,9 @@ public class FineServlet extends HttpServlet {
 	}
 
 	private void read(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		ConductorManager conductorManager = new ConductorManager();
-//		request.getSession().setAttribute(ATTRIBUTE_LIST, conductorManager.findAllConductors());
-//		change(request, response, FIND_ALL_FINE_JSP);
+		FineManager fineManager = new FineManager();
+		request.getSession().setAttribute(ATTRIBUTE_LIST, fineManager.findAllFines());
+		change(request, response, FIND_ALL_FINE_JSP);
 	}
 
 	/**
