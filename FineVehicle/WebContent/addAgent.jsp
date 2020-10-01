@@ -29,6 +29,5 @@
 				<img src="https://www.flaticon.es/svg/static/icons/svg/2991/2991206.svg" alt="Police">
 			</div>
 		</form>
-		</section>
 	</body>
 </html>
