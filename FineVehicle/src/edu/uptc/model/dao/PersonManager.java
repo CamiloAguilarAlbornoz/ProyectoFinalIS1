@@ -5,6 +5,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.Persistence;
 
+import edu.uptc.model.entity.Agent;
 import edu.uptc.model.entity.Conductor;
 import edu.uptc.model.entity.Person;
 
@@ -47,5 +48,13 @@ public class PersonManager {
     		throw new EntityNotFoundException(WARNING_GET_PERSON+ document);
    		}
 		return conductor;
+	}
+
+	public Agent findAgent(int document) {
+		Agent agent = entityManager.find(Agent.class, document);
+   		if (agent == null) {
+    		throw new EntityNotFoundException(WARNING_GET_PERSON+ document);
+   		}
+		return agent;
 	}
 }
